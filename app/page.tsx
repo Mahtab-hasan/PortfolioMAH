@@ -57,7 +57,7 @@ const projects = [
     ],
     technologies: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS", "JavaScript"],
     image: "/ecommers2.png",
-  },  
+  },
   {
     id: 3,
     title: "Interactive Reflexology Chart",
@@ -111,7 +111,7 @@ export default function Home() {
 
         {/* ===== About Section ===== */}
         <section id="skills" className="">
-          <div className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl border p-8 rounded-[30px] mt-10 border-2 border-white/20 rounded-3xl md:rounded-[32px] p-6 sm:p-8 md:p-10  bg-white/5">
+          <div className="grid grid-cols-1 gap-3 items-center justify-center md:justify-around w-full max-w-6xl border p-8 rounded-[30px] mt-10 border-2 border-white/20 rounded-3xl md:rounded-[32px] p-3 sm:p-8 md:p-10  bg-white/5">
             <h2 className="text-3xl">About me</h2>
             <p className="text-sm text-muted-foreground">
               Hi, I’m Mahtab Hasan Arpon. I see myself first as a lifelong learner and student of technology, always curious to explore new tools, frameworks, and ways to solve problems. Over time, this curiosity led me to become a Full-Stack Developer, with hands-on experience in Python, C, C++, JavaScript, React, and Next.js.
@@ -139,7 +139,7 @@ export default function Home() {
             {/* Languages */}
             <div>
               <CardHeader className="p-1">
-                <CardTitle className="text-[20px] sm:text-[21px]">1. Languages</CardTitle>
+                <CardTitle className="text-[20px] sm:text-[21px]">Languages</CardTitle>
               </CardHeader>
               <CardContent className="p-1 ">
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 text-center ">
@@ -199,12 +199,15 @@ export default function Home() {
 
 
         {/* ===== Projects Section ===== */}
-        <section id="projects" className="grid grid-cols-1 gap-6 items-center justify-center w-full max-w-6xl p-4 sm:p-6 md:p-8  mt-10 border-2 border-white/20 rounded-3xl md:rounded-[32px]  bg-white/5">
-          <h2 className="text-2xl md:text-3xl text-center font-semibold ">
+        <section
+          id="projects"
+          className="grid grid-cols-1 gap-6 items-center justify-center w-full max-w-6xl p-4 sm:p-6 md:p-8 mt-10 border-2 border-white/20 rounded-3xl md:rounded-[32px] bg-white/5"
+        >
+          <h2 className="text-2xl md:text-3xl text-center font-semibold">
             Projects
           </h2>
 
-          <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
             {projects.map((project) => (
               <Drawer key={project.id}>
                 {/* Project Card */}
@@ -217,7 +220,7 @@ export default function Home() {
 
                   <CardContent className="flex flex-col">
                     {project.image && (
-                      <div className="relative w-full h-[160px] sm:h-[250px] rounded-md overflow-hidden mb-4">
+                      <div className="relative w-full h-[160px] sm:h-[150px] rounded-md overflow-hidden mb-4">
                         <Image
                           src={project.image}
                           alt={project.title}
@@ -234,16 +237,18 @@ export default function Home() {
                     <h3 className="text-lg sm:text-lg md:text-xl font-bold mt-4 mb-2">
                       Technologies:
                     </h3>
-                    <ul className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 text-center text-xs sm:text-sm md:text-sm ">
+                    <ul className="grid grid-cols-2 sm:grid-cols-2  gap-2 sm:gap-3 md:gap-4 text-center text-xs sm:text-sm md:text-base">
                       {project.technologies.map((tech, index) => (
                         <li
                           key={index}
-                          className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 bg-white/2"
+                          className="rounded-lg px-2 py-1 sm:px-3 sm:py-2 md:px-4 md:py-2.5 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 bg-white/2 text-ellipsis overflow-hidden whitespace-nowrap"
+                          title={tech} // Shows full tech name on hover if it gets cut
                         >
                           {tech}
                         </li>
                       ))}
                     </ul>
+
 
                     {/* Drawer Trigger */}
                     <div className="flex mt-4">
