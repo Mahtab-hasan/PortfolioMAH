@@ -35,7 +35,8 @@ const projects = [
       "Designed to scale easily as the brand and audience grow",
     ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "MongoDB"],
-    image: "https://i.ibb.co.com/rR01WB9k/mayraclothing.png",
+    image: "mayra.png",
+    link: "https://mayra-clothing.vercel.app/",
   },
   {
     id: 2,
@@ -57,6 +58,7 @@ const projects = [
     ],
     technologies: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS", "JavaScript"],
     image: "/ecommers2.png",
+    link: "https://vero-e-commerce.vercel.app/",
   },
   {
     id: 3,
@@ -78,6 +80,7 @@ const projects = [
     ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
     image: "/download (1).png",
+    link: "https://foot-reflexology-chart.vercel.app/",
   },
 
 
@@ -253,7 +256,7 @@ export default function Home() {
                     {/* Drawer Trigger */}
                     <div className="flex mt-4">
                       <DrawerTrigger asChild>
-                        <button className="bg-gray-800 text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-5 md:py-2.5 rounded-lg hover:bg-gray-700 transition duration-300">
+                        <button className="bg-gray-700 text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-5 md:py-2.5 rounded-lg  transition duration-300 hover:bg-gray-400">
                           Details
                         </button>
                       </DrawerTrigger>
@@ -276,15 +279,11 @@ export default function Home() {
                         />
                       </div>
                     )}
-
                     {/* Project Details */}
                     <DrawerHeader className="flex-1 p-0">
                       <DrawerTitle className="text-lg sm:text-xl md:text-2xl font-semibold text-left">
                         {project.title}
                       </DrawerTitle>
-
-
-
                       <ul className="flex flex-wrap items-center gap-2 sm:gap-3 text-sm sm:text-base mt-2">
                         <span className="font-medium text-foreground">Technologies:</span>
                         {project.technologies.map((tech, index) => (
@@ -302,7 +301,7 @@ export default function Home() {
 
 
 
-                  <div className="p-4 bg-[#464646] text-white mt-5 border rounded-md  border-gray-300">
+                  <div className="p-4 bg-[#464646] text-white my-5 border rounded-md  border-gray-300">
                     <DrawerDescription className="text-sm sm:text-base text-left text-white my-2">
                       {project.description}
                     </DrawerDescription>
@@ -332,6 +331,11 @@ export default function Home() {
                         </ul>
                       </>
                     )}
+
+                  </div>
+
+                  <div className="">
+                    <a href={project.link}target="_blank" rel="noopener noreferrer"className="btn btn primary bg-[#464646] text-white  border rounded-md px-20 border-gray-300 w-full bg-gray-700 hover:bg-gray-400 hover:text-black transition duration-300" >Live demo</a>
                   </div>
                 </DrawerContentRight>
 
