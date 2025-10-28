@@ -37,7 +37,7 @@ export const CursorEffect = () => {
 
   return (
     <motion.div
-      className="fixed pointer-events-none z-50 mix-blend-difference hidden md:block" // <-- hide on mobile
+      className="fixed pointer-events-none z-50 mix-blend-difference hidden md:block"
       animate={{
         x: mousePosition.x,
         y: mousePosition.y,
