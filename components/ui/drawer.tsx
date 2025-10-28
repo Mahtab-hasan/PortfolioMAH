@@ -1,5 +1,5 @@
 'use client';
-
+import { motion } from "framer-motion";
 import * as React from 'react';
 import { Drawer as DrawerPrimitive } from 'vaul';
 
@@ -26,12 +26,17 @@ const DrawerOverlay = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
-  <DrawerPrimitive.Overlay
-    ref={ref}
-    className={cn('fixed inset-0 z-50 bg-black/80', className)}
-    {...props}
-  />
+  <DrawerPrimitive.Overlay asChild ref={ref} {...props}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.8 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25 }}
+      className={cn('fixed inset-0 z-50 bg-black', className)}
+    />
+  </DrawerPrimitive.Overlay>
 ));
+
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
 const DrawerContent = React.forwardRef<
@@ -54,6 +59,54 @@ const DrawerContent = React.forwardRef<
   </DrawerPortal>
 ));
 DrawerContent.displayName = 'DrawerContent';
+
+// Right-side drawer variant for full-height side panel
+// const DrawerContentRight = React.forwardRef<
+//   React.ElementRef<typeof DrawerPrimitive.Content>,
+//   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
+// >(({ className, children, ...props }, ref) => (
+//   <DrawerPortal>
+//     <DrawerOverlay />
+//     <DrawerPrimitive.Content
+//       ref={ref}
+//       className={cn(
+//         'fixed inset-y-0 right-0 z-50 flex flex-col w-[90vw] max-w-[600px] bg-background border rounded-l-[10px] overflow-hidden',
+//         className
+//       )}
+//       {...props}
+//     >
+//       <div className="flex-1 overflow-y-auto p-4">
+//         {children}
+//       </div>
+//     </DrawerPrimitive.Content>
+//   </DrawerPortal>
+// ));
+// DrawerContentRight.displayName = 'DrawerContentRight';
+
+const DrawerContentRight = React.forwardRef<
+  React.ElementRef<typeof DrawerPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
+>(({ className, children, ...props }, ref) => (
+  <DrawerPortal>
+    <DrawerOverlay />
+    <DrawerPrimitive.Content {...props} ref={ref} asChild>
+      <motion.div
+        initial={{ x: "100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "100%" }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className={cn(
+          'fixed inset-y-0 right-0 z-50 flex flex-col w-[90vw] max-w-[600px] bg-background border rounded-l-[10px] overflow-hidden',
+          className
+        )}
+      >
+        <div className="flex-1 overflow-y-auto p-4">{children}</div>
+      </motion.div>
+    </DrawerPrimitive.Content>
+  </DrawerPortal>
+));
+DrawerContentRight.displayName = 'DrawerContentRight';
+
 
 const DrawerHeader = ({
   className,
@@ -111,6 +164,7 @@ export {
   DrawerTrigger,
   DrawerClose,
   DrawerContent,
+  DrawerContentRight,
   DrawerHeader,
   DrawerFooter,
   DrawerTitle,

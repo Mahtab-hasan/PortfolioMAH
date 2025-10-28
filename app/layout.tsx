@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className}  text-white overflow-x-hidden`}>
+      <body className={`${inter.className} bg-[#0e0e0e]  text-white overflow-x-hidden`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <CursorEffect />
 

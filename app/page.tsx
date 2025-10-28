@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Drawer,
   DrawerContent,
+  DrawerContentRight,
   DrawerDescription,
   DrawerHeader,
   DrawerTitle,
@@ -14,32 +15,67 @@ const projects = [
   {
     id: 1,
     title: "Mayra Clothing",
-    description: "Developed a modern e-commerce platform for a premium apparel brand. The site offers a fast, responsive user experience with dynamic product filtering and a persistent shopping cart, built using Next.js, TypeScript, and MongoDB.",
-    features: ["Feature A", "Feature B", "Feature C"],
+    description: "A modern e-commerce clothing store offering a smooth shopping experience with stylish collections and a clean, responsive design.",
+    features: [
+      "Intuitive Shopping Experience:",
+      "Browse trendy collections for men, women, and kids",
+      "View product details with size, color, and price options",
+      "Responsive design ensures a perfect experience on all devices",
+      "Smart Product Management (Admin Panel): Add, edit, and manage products with real-time updates",
+      "Track orders, inventory, and customer activity",
+      "Manage blogs, promotions, and special offers from one place",
+      "Blog Section for Fashion Tips: Share fashion guides, styling tips, and seasonal trends",
+      "Secure & Seamless Checkout: Smooth cart and checkout process with secure payment options",
+      "Scalable & Modern Architecture: Built with Next.js, Tailwind CSS, and deployed on Vercel",
+    ],
+    impact: [
+      "Enhanced user experience with clean and elegant UI",
+      "Simplified product and order management for admins",
+      "Increased customer engagement through blog and trend updates",
+      "Designed to scale easily as the brand and audience grow",
+    ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "MongoDB"],
-    image: "/ecommers2.png",
+    image: "https://i.ibb.co.com/rR01WB9k/mayraclothing.png",
   },
   {
     id: 2,
     title: "Vero Ecommerce",
-    description: "A full-featured e-commerce storefront built with Next.js, offering a seamless shopping experience from product discovery to checkout. Features include a dynamic product gallery, state management for the cart, and a responsive design for all devices.",
-    features: ["Feature D", "Feature E"],
-    technologies: ["Next.js", "CSS", "JavaScript", "TypeScript", "MongoDB"],
+    description:
+      "A complete e-commerce platform built with Next.js, designed to deliver a smooth and modern shopping experience. It includes a dynamic product gallery, advanced cart management, and a fast, responsive design optimized for all devices.",
+    features: [
+      "Dynamic Product Gallery: View detailed product information with high-quality previews",
+      "Advanced Cart Management: Real-time updates for adding, removing, and adjusting items",
+      "Secure Checkout System: Seamless and protected payment experience",
+      "Responsive UI: Fully optimized for mobile, tablet, and desktop devices",
+      "Admin Dashboard: Manage products, orders, and customer data efficiently",
+    ],
+    impact: [
+      "Enhanced customer satisfaction through seamless user flow",
+      "Reduced cart abandonment rates with smooth checkout experience",
+      "Simplified admin operations through centralized product management",
+      "Built for scalability and future feature expansion",
+    ],
+    technologies: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS", "JavaScript"],
     image: "/ecommers2.png",
-  },
+  },  
   {
     id: 3,
     title: "Interactive Reflexology Chart",
-    description: "A responsive and interactive web application that visualizes the foot reflexology chart. Built with Next.js and Tailwind CSS to provide a clear and educational user experience on any device.",
-    features: ["Feature F", "Feature G", "Feature H"],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
-    image: "/download (1).png",
-  },
-  {
-    id: 3,
-    title: "Interactive Reflexology Chart",
-    description: "A responsive and interactive web application that visualizes the foot reflexology chart. Built with Next.js and Tailwind CSS to provide a clear and educational user experience on any device.",
-    features: ["Feature F", "Feature G", "Feature H"],
+    description:
+      "A visually engaging and educational web application that maps reflex points on the foot with interactive elements. Built using Next.js and Tailwind CSS, it provides a clean, informative, and responsive experience for users on any device.",
+    features: [
+      "Interactive Visualization: Highlight and explore different foot reflex zones",
+      "Responsive Design: Perfectly adapts to mobile, tablet, and desktop layouts",
+      "Educational Tooltips: Provides informative details on hover or click",
+      "Smooth Animations: Enhances user engagement with fluid UI transitions",
+      "Accessible Design: Ensures readability and clarity for all audiences",
+    ],
+    impact: [
+      "Improved learning experience through interactive visuals",
+      "Increased engagement with intuitive and responsive design",
+      "Promoted health awareness using modern web technologies",
+      "Easily extendable for future body-part reflex charts",
+    ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
     image: "/download (1).png",
   },
@@ -56,164 +92,248 @@ export default function Home() {
           <h1 className="logo">Arpon</h1>
         </div>
 
-        <header className=" flex flex-col md:flex-row items-center justify-center md:justify-between mt-10 w-full max-w-6xl border-2 p-10 rounded-[30px]">
+        <header className="flex flex-col md:flex-row items-center justify-center md:justify-between mt-10 w-full max-w-6xl border-2 border-white/20 rounded-3xl md:rounded-[32px] p-6 sm:p-8 md:p-10 bg-white/5">
           {/* Left side: Text and Button */}
           <div className="text-center md:text-left">
             <h1 className="text-[22px]  sm:text-4xl font-semibold">Mahtab Hasan Arpon</h1>
             <p className="mt-2 text-1xl md:text-3xl text-muted-foreground">Web Developer</p>
-            <Button asChild className="mt-6 p-6 text-base-100 bg-[#979797] hover:bg-[#14142b]  transition-all hover:-translate-y-1">
-              <a href="https://drive.google.com/file/d/1p1YL6K7ds0FuO5g1sfNy5wTmH5SLpbV2/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download Resume</a>
+            <Button asChild className="mt-6 p-6 text-base-100 bg-[#d3d0d0] hover:bg-[#ffffff]  transition-all hover:-translate-y-1 ">
+              <a href="https://drive.google.com/file/d/1srOdUJeXrakdn5nREt2DrlXpWOtuIJMj/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download Resume</a>
             </Button>
+
           </div>
           {/* Right side: Circular Image */}
-          <div className="w-56 h-56 md:w-[350px] md:h-[350px] rounded-full overflow-hidden flex-shrink-0 mt-6 md:mt-0">
+          <div className="w-56 h-56 md:w-[350px] md:h-[350px] rounded-full overflow-hidden flex-shrink-0 mt-6 md:mt-0 ">
             <img src="/mahtab.png" alt="" className="w-full h-full object-cover" />
           </div>
+
         </header>
 
         {/* ===== About Section ===== */}
         <section id="skills" className="">
-          <div className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl border-2 p-8 rounded-[30px] mt-10">
+          <div className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl border p-8 rounded-[30px] mt-10 border-2 border-white/20 rounded-3xl md:rounded-[32px] p-6 sm:p-8 md:p-10  bg-white/5">
             <h2 className="text-3xl">About me</h2>
             <p className="text-sm text-muted-foreground">
-              I am Mahtab Hasan Arpon, a dedicated Full-Stack Developer with experience in modern web technologies. My technical expertise spans multiple programming languages and frameworks, including Python, C, C++, JavaScript, React, and Next.js. I am committed to developing high- performance, scalable, and user-friendly web applications.
+              Hi, I’m Mahtab Hasan Arpon. I see myself first as a lifelong learner and student of technology, always curious to explore new tools, frameworks, and ways to solve problems. Over time, this curiosity led me to become a Full-Stack Developer, with hands-on experience in Python, C, C++, JavaScript, React, and Next.js.
+
+              I approach every project by first understanding the purpose, goals, and user needs, ensuring that the solutions I build are not just functional, but impactful and user-friendly. I enjoy taking on challenges that push me to learn more while delivering real-world applications.
             </p>
             <h1 className="text-2xl ">My Vision</h1>
             <p className="text-sm text-muted-foreground">
-              I am Mahtab Hasan Arpon, a dedicated Full-Stack Developer with experience in modern web technologies. My technical expertise spans multiple programming languages and frameworks, including Python, C, C++, JavaScript, React, and Next.js. I am committed to developing high- performance, scalable, and user-friendly web applications.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              I am Mahtab Hasan Arpon, a dedicated Full-Stack Developer with experience in modern web technologies. My technical expertise spans multiple programming languages and frameworks, including Python, C, C++, JavaScript, React, and Next.js. I am committed to developing high- performance, scalable, and user-friendly web applications.
+              I aspire to continuously evolve as a Full-Stack Developer, combining strong technical skills with a growth-oriented mindset. In the future, I see myself leading projects that push the boundaries of technology and deliver real-world impact. My goal is to create innovative, scalable, and user-friendly applications that solve meaningful problems for businesses and users alike. I aim to stay ahead of emerging trends, adopt best practices, and mentor others while building solutions that are reliable, maintainable, and future-ready. Through continuous learning, curiosity, and hands-on experience, I want to make a lasting contribution to the world of technology.
             </p>
           </div>
         </section>
 
 
         {/* ===== Skills Section ===== */}
-        <section id="skills" className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl border-2 p-8 pb-10 rounded-[30px] mt-10 ">
-          <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-1">
-            <h2 className="md:text-3xl text-2xl ">Skills & Technologies</h2>
+        <section
+          id="skills"
+          className="w-full max-w-6xl border-2 p-4 sm:p-6 md:p-8 pb-10 rounded-[30px] mt-10 mx-auto border-2 border-white/20 rounded-3xl md:rounded-[32px] p-6 sm:p-8 md:p-10 bg-white/5"
+        >
+          <h2 className="text-2xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 text-center">
+            Skills & Technologies
+          </h2>
 
-            <CardHeader className="p-1">
-              <CardTitle className="text-[21px]">1. Languages</CardTitle>
-            </CardHeader>
-            <CardContent className="p-1">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 text-center gap-3 sm:gap-10">
-                <li data-skill="python" className="rounded-lg border-2 px-10 py-3 sm:px-20">Python</li>
-                <li data-skill="c" className="rounded-lg border-2 px-10 py-3 sm:px-20">C</li>
-                <li data-skill="javascript" className="rounded-lg border-2 px-10 py-3 sm:px-20">JavaScript</li>
-                <li data-skill="cpp" className="rounded-lg border-2 px-10 py-3 sm:px-20">C++</li>
-              </ul>
-            </CardContent>
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 ">
+            {/* Languages */}
+            <div>
+              <CardHeader className="p-1">
+                <CardTitle className="text-[20px] sm:text-[21px]">1. Languages</CardTitle>
+              </CardHeader>
+              <CardContent className="p-1 ">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 text-center ">
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">Python</li>
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">C</li>
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">JavaScript</li>
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">C++</li>
+                </ul>
+              </CardContent>
+            </div>
 
-            <CardHeader className="p-1">
-              <CardTitle className="text-[21px]">Stack</CardTitle>
-            </CardHeader>
-            <CardContent className="p-1">
-              <ul className="grid grid-cols-1 sm:grid-cols-3 text-center gap-3 sm:gap-10">
-                <li data-skill="django" className="rounded-lg border-2 px-10 py-3 sm:px-20">Django</li>
-                <li data-skill="react" className="rounded-lg border-2 px-10 py-3 sm:px-20">MERN</li>
-                <li data-skill="nextjs" className="rounded-lg border-2 px-10 py-3 sm:px-20">Next.js</li>
-              </ul>
-            </CardContent>
+            {/* Stack */}
+            <div>
+              <CardHeader className="p-1">
+                <CardTitle className="text-[20px] sm:text-[21px]">Stack</CardTitle>
+              </CardHeader>
+              <CardContent className="p-1">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 text-center">
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">Django</li>
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">MERN</li>
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">Next.js</li>
+                </ul>
+              </CardContent>
+            </div>
 
-            <CardHeader className="p-1">
-              <CardTitle className="text-[21px]">Database</CardTitle>
-            </CardHeader>
-            <CardContent className="p-1">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center gap-3 sm:gap-10">
-                <li data-skill="MongoDB" className="rounded-lg border-2 px-10 py-3 sm:px-20">MongoDB</li>
-                <li data-skill="MySQL" className="rounded-lg border-2 px-10 py-3 sm:px-20">MySQL</li>
-              </ul>
-            </CardContent>
+            {/* Database */}
+            <div>
+              <CardHeader className="p-1">
+                <CardTitle className="text-[20px] sm:text-[21px]">Database</CardTitle>
+              </CardHeader>
+              <CardContent className="p-1">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 text-center">
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">MongoDB</li>
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">MySQL</li>
+                </ul>
+              </CardContent>
+            </div>
 
-            <CardHeader className="p-1">
-              <CardTitle className="text-[21px]">Currently Exploring</CardTitle>
-            </CardHeader>
-            <CardContent className="p-1">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center gap-3 sm:gap-10">
-                <li data-skill="TypeScript" className="rounded-lg border-2 px-10 py-3 sm:px-18">TypeScript</li>
-                <li data-skill="CI/CD" className="rounded-lg border-2 px-10 py-3 sm:px-18">CI/CD</li>
-                <li data-skill="Cloud" className="rounded-lg border-2 px-10 py-3 sm:px-18">Cloud</li>
-                <li data-skill="AI Integration" className="rounded-lg border-2 px-10 py-3 sm:px-18">AI Integration</li>
-              </ul>
-            </CardContent>
+            {/* Currently Exploring */}
+            <div>
+              <CardHeader className="p-1">
+                <CardTitle className="text-[20px] sm:text-[21px]">Currently Exploring</CardTitle>
+              </CardHeader>
+              <CardContent className="p-1">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 text-center">
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">TypeScript</li>
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">CI/CD</li>
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">Cloud</li>
+                  <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">AI Integration</li>
+                </ul>
+              </CardContent>
+            </div>
           </div>
         </section>
 
 
 
-        {/* ===== Projects Section ===== */}
-        <section
-          id="projects"
-          className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl border-2 p-8 pb-10 rounded-[30px] mt-10"
-        >
-          <h2 className="text-3xl">Projects</h2>
 
-          <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2">
+        {/* ===== Projects Section ===== */}
+        <section id="projects" className="grid grid-cols-1 gap-6 items-center justify-center w-full max-w-6xl p-4 sm:p-6 md:p-8  mt-10 border-2 border-white/20 rounded-3xl md:rounded-[32px]  bg-white/5">
+          <h2 className="text-2xl md:text-3xl text-center font-semibold ">
+            Projects
+          </h2>
+
+          <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2 ">
             {projects.map((project) => (
               <Drawer key={project.id}>
-                <DrawerTrigger asChild>
-                  <Card className="cursor-pointer hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <CardTitle>{project.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="md:text-base text-sm">{project.description}</p>
+                {/* Project Card */}
+                <Card className="hover:shadow-lg transition-shadow duration-300 border-2 border-white/10 bg-white/2">
+                  <CardHeader>
+                    <CardTitle className="text-lg sm:text-lg md:text-xl font-medium">
+                      {project.title}
+                    </CardTitle>
+                  </CardHeader>
 
-                      <h3 className="text-xl font-bold mt-4 mb-2">Technologies:</h3>
+                  <CardContent className="flex flex-col">
+                    {project.image && (
+                      <div className="relative w-full h-[160px] sm:h-[250px] rounded-md overflow-hidden mb-4">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover rounded-md"
+                        />
+                      </div>
+                    )}
 
-                      {/* ✅ Dynamic technology list */}
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center gap-3 sm:gap-1 items-center justify-center text-sm">
+                    <p className="text-sm sm:text-base md:text-base">
+                      {project.description}
+                    </p>
+
+                    <h3 className="text-lg sm:text-lg md:text-xl font-bold mt-4 mb-2">
+                      Technologies:
+                    </h3>
+                    <ul className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 text-center text-xs sm:text-sm md:text-sm ">
+                      {project.technologies.map((tech, index) => (
+                        <li
+                          key={index}
+                          className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 bg-white/2"
+                        >
+                          {tech}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Drawer Trigger */}
+                    <div className="flex mt-4">
+                      <DrawerTrigger asChild>
+                        <button className="bg-gray-800 text-white px-4 py-2 sm:px-5 sm:py-2.5 md:px-5 md:py-2.5 rounded-lg hover:bg-gray-700 transition duration-300">
+                          Details
+                        </button>
+                      </DrawerTrigger>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Drawer Content */}
+
+                <DrawerContentRight className="w-[100vw] max-w-[720px] border border-white/20 bg-white/10 backdrop-blur-lg shadow-2xl ">
+
+
+
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 ">
+                    {/* Project Image */}
+                    {project.image && (
+                      <div className="relative rounded-lg overflow-hidden w-full sm:w-[200px] h-[140px] sm:h-[120px] md:h-[140px] border">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover rounded-lg"
+                        />
+                      </div>
+                    )}
+
+                    {/* Project Details */}
+                    <DrawerHeader className="flex-1 p-0">
+                      <DrawerTitle className="text-lg sm:text-xl md:text-2xl font-semibold text-left">
+                        {project.title}
+                      </DrawerTitle>
+
+
+
+                      <ul className="flex flex-wrap items-center gap-2 sm:gap-3 text-sm sm:text-base mt-2">
+                        <span className="font-medium text-foreground">Technologies:</span>
                         {project.technologies.map((tech, index) => (
                           <li
                             key={index}
-                            data-skill={tech.toLowerCase()}
-                            className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs"
+                            className="px-2 py-1 text-xs sm:text-sm "
                           >
                             {tech}
                           </li>
                         ))}
                       </ul>
-
-                      {project.image && (
-                        <div className="mt-4 rounded-md overflow-hidden">
-                          <Image
-                            src={project.image}
-                            alt={project.title}
-                            width={450}          // ✅ অবশ্যই width দিতে হবে
-                            height={450}         // ✅ height ও দিতে হবে
-                            className="rounded-md object-cover"
-                            priority={false}     // optional: first image হলে true দাও
-                          />
-                        </div>
-                      )}
-                    </CardContent>
-                  </Card>
-                </DrawerTrigger>
-
-                <DrawerContent>
-                  <DrawerHeader>
-                    <DrawerTitle>{project.title}</DrawerTitle>
-                    <DrawerDescription className="md:text-base text-sm">{project.description}</DrawerDescription>
-                  </DrawerHeader>
-
-                  <div className="p-4">
-                    <h3 className="text-xl font-bold mb-2">Features:</h3>
-                    <ul className="list-disc pl-5">
-                      {project.features.map((feature, index) => (
-                        <li key={index}>{feature}</li>
-                      ))}
-                    </ul>
-
-                    <h3 className="text-xl font-bold mt-4 mb-2">Technologies:</h3>
-                    <ul className="list-disc pl-5">
-                      {project.technologies.map((tech, index) => (
-                        <li key={index}>{tech}</li>
-                      ))}
-                    </ul>
+                    </DrawerHeader>
                   </div>
-                </DrawerContent>
+
+
+
+
+                  <div className="p-4 bg-[#464646] text-white mt-5 border rounded-md  border-gray-300">
+                    <DrawerDescription className="text-sm sm:text-base text-left text-white my-2">
+                      {project.description}
+                    </DrawerDescription>
+                    {project.features && project.features.length > 0 && (
+                      <>
+                        <h3 className="text-lg sm:text-lg md:text-xl font-bold mb-2">
+                          Features:
+                        </h3>
+                        <ul className="list-disc pl-5 text-sm sm:text-base md:text-base space-y-1">
+                          {project.features.map((feature, index) => (
+                            <li key={index}>{feature}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+
+
+                    {project.impact && project.impact.length > 0 && (
+                      <>
+                        <h3 className="text-lg sm:text-lg md:text-xl font-bold mt-4 mb-2">
+                          Impact:
+                        </h3>
+                        <ul className="list-disc pl-5 text-sm sm:text-base md:text-base space-y-1">
+                          {project.impact.map((point, index) => (
+                            <li key={index}>{point}</li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                  </div>
+                </DrawerContentRight>
+
+
               </Drawer>
             ))}
           </div>
@@ -221,34 +341,37 @@ export default function Home() {
 
 
 
+
+
+
         {/* ===== courses Section ===== */}
         <section
           id="projects"
-          className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl border-2 p-8 pb-10 rounded-[30px] mt-10"
+          className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl border-2 p-8 pb-10 rounded-[30px] mt-10 border-2 border-white/20 rounded-3xl md:rounded-[32px] p-3 sm:p-5 md:p-10 bg-white/5"
         >
-          <h2 className="text-3xl">Courses and education</h2>
+          <h2 className="text-2xl md:text-3xl text-center sm:mt-0 mt-4">Courses and education</h2>
 
-          <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 sm:mt-0 mt-2 md:grid-cols-2 ">
 
             <Drawer>
               <DrawerTrigger asChild>
-                <Card >
+                <Card className="rounded-lg border-2 border-white/20 bg-white/2">
                   <CardHeader>
                     <CardTitle className="flex items-center "> <img className="w-14 h-14" src="/ph_logo-C24KMH6S.svg" alt="" /> <p className="md:text-xl text-sm">Programming hero</p></CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="md:text-base text-sm">I studied Web Development at Programming Hero, where I gained hands-on experience with HTML, CSS, Tailwind, JavaScript, React, Firebase, Node.js, Express, and MongoDB. Through practical projects and assignments, I developed skills in full-stack development, including dynamic UI creation, API integration, and server-side programming. I continue to build on this foundation to grow as a versatile developer capable of creating modern, responsive web applications.</p>
-                    <h3 className="text-xl font-bold mt-4 mb-2">Technologies:</h3>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center gap-3 sm:gap-1 items-center justify-center text-sm">
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">HTML</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">CSS</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">Tailwind</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">JavaScript</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">React</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">Firebase</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">Node JS</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">Express JS</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">Mongo DB</li>
+                  <CardContent className="w-full px-4 sm:px-6 md:px-8 ">
+                    <p className="text-sm text-justify leading-relaxed text-white">I studied Web Development at Programming Hero, where I gained hands-on experience with HTML, CSS, Tailwind, JavaScript, React, Firebase, Node.js, Express, and MongoDB. Through practical projects and assignments, I developed skills in full-stack development, including dynamic UI creation, API integration, and server-side programming. I continue to build on this foundation to grow as a versatile developer capable of creating modern, responsive web applications.</p>
+                    <h3 className="text-sm md:text-xl font-bold mt-4 mb-2">Technologies:</h3>
+                    <ul className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3  text-center gap-3 items-center justify-center text-sm ">
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">HTML</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">CSS</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">Tailwind</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">JavaScript</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">React</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">Firebase</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">Node JS</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">Express JS</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">Mongo DB</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -257,23 +380,23 @@ export default function Home() {
 
             <Drawer>
               <DrawerTrigger asChild>
-                <Card >
+                <Card className="rounded-lg border-2 border-white/20 bg-white/2">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2"> <img className="w-14 h-10 " src="/phitron1.png" alt="" /> <p className="md:text-xl text-sm">Phitron</p></CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="md:text-base text-sm">I studied in the Competitive Programming & Software Development Bootcamp, where I gained hands-on experience in core computer science subjects, problem-solving, data structures, algorithms, Python, C/C++, and software development with Django. I participated in over 500 problem-solving challenges, programming contests, and live guided sessions, building practical skills in competitive programming, database management, and full-stack application development. Through rigorous projects, assignments, and intensive coaching, I developed a strong foundation to grow as a skilled programmer ready for software engineering and competitive coding challenges.</p>
-                    <h3 className="text-xl font-bold mt-4 mb-2">Technologies:</h3>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center gap-3 sm:gap-1 items-center justify-center text-sm">
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">HTML</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">CSS</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">Tailwind</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">JavaScript</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">React</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">Firebase</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">Node JS</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">Express JS</li>
-                      <li className="rounded-lg border-2 px-6 py-3 sm:px-0 hover:bg-white/10 transition duration-300  md:text-base text-xs">Mongo DB</li>
+                  <CardContent className="w-full ">
+                    <p className="text-sm text-justify  text-white">I studied in the Competitive Programming & Software Development Bootcamp, where I gained hands-on experience in core computer science subjects, problem-solving, data structures, algorithms, Python, C/C++, and software development with Django. I participated in over 500 problem-solving challenges, programming contests, and live guided sessions, building practical skills in competitive programming, database management, and full-stack application development. Through rigorous projects, assignments, and intensive coaching, I developed a strong foundation to grow as a skilled programmer ready for software engineering and competitive coding challenges.</p>
+                    <h3 className="text-sm md:text-xl font-bold mt-4 mb-2">Technologies:</h3>
+                    <ul className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3  text-center gap-3 items-center justify-center text-sm">
+                      <li className="rounded-lg  px-1 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">HTML</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">CSS</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">Tailwind</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">JavaScript</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">React</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">Firebase</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">Node JS</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">Express JS</li>
+                      <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">Mongo DB</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -288,11 +411,11 @@ export default function Home() {
 
 
         {/* ===== Contact Section ===== */}
-        <section id="contact" className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl border-2 p-8 pb-10 rounded-[30px] mt-10">
-          <h2 className="text-3xl ">Contact Me</h2>
+        <section id="contact" className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl border-2 p-8 pb-10 rounded-[30px] mt-10 border-2 border-white/20 rounded-3xl md:rounded-[32px] p-6 sm:p-8 md:p-10 bg-white/5">
+          <h2 className="text-2xl md:text-3xl text-center ">Contact Me</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
             <div className="gap-8 p-6 rounded-xl ">
-              <div className="space-y-6 m-auto">
+              <div className="space-y-3 md:space-y-6 m-auto">
                 <div className="flex items-center space-x-4">
                   <Mail className="h-6 w-6 text-white" />
                   <p className="text-white font-medium">arpon5566@gmail.com</p>

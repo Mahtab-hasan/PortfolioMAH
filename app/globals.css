@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -136,3 +139,4 @@
   text-transform: uppercase;
   letter-spacing: -3px ;
 }
+
