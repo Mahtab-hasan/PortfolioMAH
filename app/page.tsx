@@ -258,10 +258,7 @@ export default function Home() {
 
                 {/* Drawer Content */}
 
-                <DrawerContentRight className="w-[100vw] max-w-[720px] border border-white/20 bg-white/10 backdrop-blur-lg shadow-2xl ">
-
-
-
+                <DrawerContentRight className="w-[100vw] max-w-[720px] border border-white/20 bg-white/10 backdrop-blur-lg shadow-2xl overflow-y-auto  ">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 ">
                     {/* Project Image */}
                     {project.image && (
@@ -347,7 +344,7 @@ export default function Home() {
         {/* ===== courses Section ===== */}
         <section
           id="projects"
-          className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl border-2 p-8 pb-10 rounded-[30px] mt-10 border-2 border-white/20 rounded-3xl md:rounded-[32px] p-3 sm:p-5 md:p-10 bg-white/5"
+          className="grid grid-cols-1 gap-8 items-center justify-center md:justify-around w-full max-w-6xl pb-10 mt-10 border-2 border-white/20 rounded-3xl md:rounded-[32px] p-3 sm:p-5 md:p-10 bg-white/5"
         >
           <h2 className="text-2xl md:text-3xl text-center sm:mt-0 mt-4">Courses and education</h2>
 
@@ -362,7 +359,7 @@ export default function Home() {
                   <CardContent className="w-full px-4 sm:px-6 md:px-8 ">
                     <p className="text-sm text-justify leading-relaxed text-white">I studied Web Development at Programming Hero, where I gained hands-on experience with HTML, CSS, Tailwind, JavaScript, React, Firebase, Node.js, Express, and MongoDB. Through practical projects and assignments, I developed skills in full-stack development, including dynamic UI creation, API integration, and server-side programming. I continue to build on this foundation to grow as a versatile developer capable of creating modern, responsive web applications.</p>
                     <h3 className="text-sm md:text-xl font-bold mt-4 mb-2">Technologies:</h3>
-                    <ul className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3  text-center gap-3 items-center justify-center text-sm ">
+                    <ul className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3  text-center  items-center justify-center text-sm ">
                       <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">HTML</li>
                       <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">CSS</li>
                       <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20 ">Tailwind</li>
@@ -387,7 +384,7 @@ export default function Home() {
                   <CardContent className="w-full ">
                     <p className="text-sm text-justify  text-white">I studied in the Competitive Programming & Software Development Bootcamp, where I gained hands-on experience in core computer science subjects, problem-solving, data structures, algorithms, Python, C/C++, and software development with Django. I participated in over 500 problem-solving challenges, programming contests, and live guided sessions, building practical skills in competitive programming, database management, and full-stack application development. Through rigorous projects, assignments, and intensive coaching, I developed a strong foundation to grow as a skilled programmer ready for software engineering and competitive coding challenges.</p>
                     <h3 className="text-sm md:text-xl font-bold mt-4 mb-2">Technologies:</h3>
-                    <ul className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3  text-center gap-3 items-center justify-center text-sm">
+                    <ul className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3  text-center  items-center justify-center text-sm">
                       <li className="rounded-lg  px-1 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">HTML</li>
                       <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">CSS</li>
                       <li className="rounded-lg  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 hover:bg-gray-100/20 transition duration-300 border-2 border-white/20">Tailwind</li>
